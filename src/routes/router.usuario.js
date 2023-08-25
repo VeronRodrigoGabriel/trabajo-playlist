@@ -1,5 +1,6 @@
-const router = require('express').Router();
+import { Router } from "express"
 
+const router = Router()
 
 
 
@@ -18,7 +19,7 @@ router.post('/api/')
 router.put('/api/:id')
 
 
-module.exports = router;
+export default router
 
 
 

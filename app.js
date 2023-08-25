@@ -1,18 +1,20 @@
-const express = require('express')
+import express from 'express'
 const app = express()
-const morgan = require('morgan')
-const cors = require('cors')
-require('dotenv').config
+import morgan from 'morgan'
+import cors from 'cors'
+import dotenv from 'dotenv'
 
 
-port = process.env.PORT || 3000
+
+const port = process.env.PORT
 
 //middleware
 app.use(morgan('dev'))
 app.use(cors())
 
 //Rutas
-app.use('api', require('./src/routes/router.usuario'))
+import router from './src/routes/router.usuario'
+app.use('/api', router)
 
 
 app.listen(() => {
