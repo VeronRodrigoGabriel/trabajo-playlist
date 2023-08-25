@@ -1,13 +1,13 @@
-import { Router } from "express"
-
-const router = Router()
+import express from "express"
+import Usuarioctrl from '../controllers/usuario.controllers.js'
+const router = express.Router()
 
 
 
 //CRUD USUARIO
 
 //Obtener todos
-router.get('/api')
+router.get('/api', Usuarioctrl.renderCrearUsuario)
 
 //Obtener uno
 router.get('/api/:id')
@@ -15,8 +15,6 @@ router.get('/api/:id')
 //Subir
 router.post('/api/')
 
-//Actualizar
-router.put('/api/:id')
 
 
 export default router
