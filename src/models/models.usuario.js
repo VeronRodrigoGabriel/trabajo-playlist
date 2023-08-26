@@ -3,14 +3,23 @@ import { DataTypes } from "sequelize";
 
 const Usuarios = sequelize.define('Usuarios', {
     id: {
+        type: DataTypes.INTEGER,
         primaryKey: true,
-        autoincrement: true
+        autoIncrement: true
     },
     email:{
         type: DataTypes.STRING,
         allownull: false
     },
-    passwors: {
+    password: {
+        type: DataTypes.STRING,
+        allownull: false
+    },
+    telefono:{
+        type: DataTypes.INTEGER,
+        allownull: false
+    },
+    nombre_completo:{
         type: DataTypes.STRING,
         allownull: false
     },
