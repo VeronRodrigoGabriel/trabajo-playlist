@@ -18,7 +18,7 @@ formCrearUsuario.addEventListener('submit', async (e) =>{
         telefono
     }
 
-    const data = await fetch('/api/',{
+    const data = await fetch('/crear-usuario/',{
         method: 'POST',
         body: JSON.stringify(Usuario),
         headers: {

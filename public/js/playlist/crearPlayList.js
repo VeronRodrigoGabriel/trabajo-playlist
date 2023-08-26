@@ -4,19 +4,20 @@ const formCrearPlaylist = document.querySelector('#formCrearPlayList')
 formCrearPlaylist.addEventListener('submit', async (e) =>{
     e.preventDefault()
 
-    const nombre_playlist = document.querySelector('#nombre_playlist')
-    const genero_musica = document.querySelector('#genero_musica')
+    const nombre_playlist = document.querySelector('#nombre_playlist').value
+    const genero_musica = document.querySelector('#genero_musica').value
 
-    const nueva_playlist = {
+    const nueva_playlist ={
         nombre_playlist,
-        genero_musica
+         genero_musica
     }
 
-    const data = await fetch('',{
+    console.log(nombre_playlist,genero_musica)
+    const data = await fetch('/api/',{
         method: 'POST',
         body: JSON.stringify(nueva_playlist),
         headers: {
-            'Content-Type': 'aplication/json'
+            'Content-Type': 'application/json'
         }
     })
 

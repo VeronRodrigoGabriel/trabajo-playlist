@@ -14,7 +14,7 @@ router.get('/playList', playListCtrl.renderPlayList)
 router.get('/api/:id')
 
 //Subir
-router.post('/api/')
+router.post('/api/', playListCtrl.crearplaylist)
 
 //Actualizar
 router.put('/api/:id')

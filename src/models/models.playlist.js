@@ -1,11 +1,10 @@
-import sequelize from "../../db";
+import sequelize from "../../db.js";
 import { DataTypes } from "sequelize";
 
-
-const playList = sequelize.define('playlist',{
+const playList = sequelize.define('playlists',{
     id_playlist:{
         type: DataTypes.INTEGER,
-        primarykey: true,
+        primaryKey: true,
         autoIncrement: true
     },
     nombre_playlist:{
@@ -15,31 +14,13 @@ const playList = sequelize.define('playlist',{
     genero_musica:{
         type: DataTypes.STRING,
         allownull: false
-    },  
-     createdAt: {
-        type: DataTypes.DATE,
-        allowNull: false,
-        defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
-      },
-    updatedAt: {
-        type: DataTypes.DATE,
-        allowNull: false,
-        defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
-      },
-    deletedAt: {
-        type: DataTypes.DATE,
-        allowNull: true,
-      }
+    }
 },{
-    createdAt: true,
-    updatedAt: true,
-    deletedAt: true,
-    tablename: 'playlist',
-
+    tablename: 'playlists'
 })
 
 playList.sync({force: false}).then(()=>{
-    console.log('Tablla de playlist creada')
+    console.log('Tabla de playlist creada')
 })
 
 export default playList

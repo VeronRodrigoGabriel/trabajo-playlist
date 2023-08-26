@@ -13,7 +13,7 @@ routes.get('/api', usuarioCtrl.renderCrearUsuario)
 routes.get('/api/:id')
 
 //Subir
-routes.post('/api/', usuarioCtrl.crearUsuario)
+routes.post('/crear-usuario/', usuarioCtrl.crearUsuario)
 
 
 
