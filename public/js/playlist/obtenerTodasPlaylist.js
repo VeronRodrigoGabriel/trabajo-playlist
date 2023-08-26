@@ -1,10 +1,10 @@
 const obtenerPlaylist = async () =>{
 
-    const data = await fetch('',{
+    const data = await fetch('/api/',{
         method: 'GET'
     })
 
-    const playlist = data.json()
+    const playlist = await data.json()
 
     return playlist
 }
@@ -17,10 +17,10 @@ const mostrarPlaylist = (playlist, tablaElement) => {
         <tr>
             <td>${playlist.nombre_playlist}</td>
             <td>${playlist.genero_musica}</td>
-            <td>
+            <td>${playlist.createdAt}</td>
            <div class="row">
-           <a href="/editar-reserva/${playlist.id}" class="btn btn-sm btn-warning">Editar</a>
-           <button class="btn btn-danger btn-sm" onclick=eliminarReserva(event)  data-id="${reserva.id}" >Eliminar</button>
+           <a href="/api/${playlist.id_playlist}" class="btn btn-sm btn-warning">Abrir</a>
+           <button class="btn btn-danger btn-sm"  data-id="${playlist.id_playlist}" >Eliminar</button>
            </div>
             </td>
         </tr>
@@ -33,3 +33,12 @@ const mostrarPlaylist = (playlist, tablaElement) => {
 
 
 }
+
+document.addEventListener('DOMContentLoaded', async () => {
+
+    const tbody = document.querySelector('#playlist');
+    const playList = await obtenerPlaylist()
+    mostrarPlaylist(playList, tbody)
+
+
+});

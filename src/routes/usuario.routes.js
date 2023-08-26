@@ -7,10 +7,7 @@ const routes = express.Router()
 //CRUD USUARIO
 
 //Obtener todos
-routes.get('/api', usuarioCtrl.renderCrearUsuario)
-
-//Obtener uno
-routes.get('/api/:id')
+routes.get('/registro', usuarioCtrl.renderCrearUsuario)
 
 //Subir
 routes.post('/crear-usuario/', usuarioCtrl.crearUsuario)

@@ -4,11 +4,12 @@ import { Router } from "express"
 const router = Router()
 
 router.get('/crear-playlist', playListCtrl.renderCrearPlayList)
+router.get('/playList', playListCtrl.renderPlayList)
 
 //CRUD USUARIO
 
 //Obtener todos
-router.get('/playList', playListCtrl.renderPlayList)
+router.get('/api/', playListCtrl.obtenerPlaylists)
 
 //Obtener uno
 router.get('/api/:id')

@@ -38,4 +38,18 @@ playListCtrl.crearplaylist = async (req,res) =>{
 
 }
 
+//Obtener todas las playlist
+playListCtrl.obtenerPlaylists = async (req,res) =>{
+    try{
+        const PlayList = await playList.findAll({})
+
+        return res.json(PlayList)
+    }catch(error){
+        console.log('error al obtener playlists')
+        return res.status(500).json({
+            message:'error al obtener playlists'
+        })
+    }
+}
+
 export default playListCtrl
