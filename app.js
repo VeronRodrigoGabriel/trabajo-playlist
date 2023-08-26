@@ -26,8 +26,10 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 //Rutas
-import router from './src/routes/router.usuario.js'
-app.use( router)
+import routes from './src/routes/usuario.routes.js'
+import routesPlayList from './src/routes/playlist.routes.js'
+app.use( routes)
+app.use(routesPlayList)
 
 //Base de datos
 import sequelize from './db.js'

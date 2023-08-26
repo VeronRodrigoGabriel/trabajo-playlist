@@ -2,7 +2,7 @@ const usuarioCtrl  = {};
 import Usuarios from '../models/models.usuario.js'
 
 usuarioCtrl.renderCrearUsuario = (req,res) => {
-    res.render('CrearUsuario')
+    res.render('usuario/CrearUsuario')
 }
 
 //controladores
