@@ -1,5 +1,6 @@
 const playListCtrl = {};
 import playList from '../models/models.playlist.js'
+import usuarios from '../models/models.usuario.js';
 
 playListCtrl.renderPlayList = (req,res) =>{
     res.render('playlist/playlist')
@@ -18,7 +19,7 @@ playListCtrl.crearplaylist = async (req,res) =>{
         nombre_playlist,
         genero_musica
     } = req.body
-
+    
     try {
         const nuevaPlaylist = new playList({
             nombre_playlist,
@@ -76,5 +77,20 @@ playListCtrl.eliminarPlaylist = async (req,res) =>{
 }
 
 //Actualizar
-
+playListCtrl.editaPlaylist = async (req,res) =>{
+    try{
+        const {id} = req.params
+        const playlist = await playList.findByPk(id)
+        
+        await playlist.update(req.body)
+        return res.json({
+            message: 'Playlist editada con exito'
+        })
+    }catch(error){
+        console.log('Error al editar playlist')
+        return res.status(500).json({
+            message: 'Error al editar la playlist'
+        })
+    }
+}
 export default playListCtrl

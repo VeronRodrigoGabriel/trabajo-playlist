@@ -6,13 +6,13 @@ const routes = express.Router()
 
 //CRUD USUARIO
 
-//Obtener todos
 routes.get('/registro', usuarioCtrl.renderCrearUsuario)
 
-//Subir
+//crear usuario
 routes.post('/crear-usuario/', usuarioCtrl.crearUsuario)
 
-
+//Obtener un usuario
+routes.get('/usuario/:id', usuarioCtrl.obtenerUsuario)
 
 export default routes
 

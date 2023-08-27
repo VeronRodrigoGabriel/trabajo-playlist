@@ -13,11 +13,11 @@ router.get('/api/', playListCtrl.obtenerPlaylists)
 //Obtener uno
 router.get('/api/:id')
 
-//Subir
+//crear
 router.post('/api/', playListCtrl.crearplaylist)
 
 //Actualizar
-router.put('/api/:id')
+router.put('/api/:id', playListCtrl.editaPlaylist)
 
 //elimninar
 router.delete('/api/:id', playListCtrl.eliminarPlaylist)
