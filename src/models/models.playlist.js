@@ -3,7 +3,7 @@ import { DataTypes } from "sequelize";
 
 
 const playList = sequelize.define('playlists',{
-    id_playlist:{
+    id:{
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
@@ -18,12 +18,6 @@ const playList = sequelize.define('playlists',{
     }
 },{
     tablename: 'playlists'
-})
-
-
-
-playList.sync({force: false}).then(()=>{
-    console.log('Tabla de playlist creada')
 })
 
 export default playList

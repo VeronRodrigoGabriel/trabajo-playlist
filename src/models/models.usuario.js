@@ -3,7 +3,7 @@ import { DataTypes } from "sequelize";
 
 
 const usuarios = sequelize.define('usuarios', {
-    id_usuarios: {
+    id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
@@ -33,9 +33,5 @@ const usuarios = sequelize.define('usuarios', {
 });
 
 
-
-usuarios.sync({ force: false }).then(() => {
-    console.log('Tabla de Usuarios creada');
-});
 
 export default usuarios;

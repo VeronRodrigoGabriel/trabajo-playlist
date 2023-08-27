@@ -32,7 +32,7 @@ app.use( routes)
 app.use(routesPlayList)
 
 //Base de datos
-import sequelize from './db.js'
+import sequelize from './src/models/asociaciones.js'
 sequelize.authenticate()
 .then(() => console.log('data base connected'))
 .catch(err => console.error(err));

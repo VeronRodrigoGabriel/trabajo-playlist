@@ -27,13 +27,13 @@ playListCtrl.crearplaylist = async (req,res) =>{
         await nuevaPlaylist.save()
 
         return res.status(201).json({
-            message: 'Reserva del vuelo creada con exito'
+            message: 'Playlist creada con exito'
         })
 
     } catch (error) {
-        console.log("Error al crear reserva", error)
+        console.log("Error al crear Playlist", error)
         return res.status(500).json({
-            message: "error al crear reserva"
+            message: "Error al crear Playlist"
         })
     }
 
@@ -56,11 +56,11 @@ playListCtrl.obtenerPlaylists = async (req,res) =>{
 
 //eliminar playlist
 playListCtrl.eliminarPlaylist = async (req,res) =>{
-    const {id_playlist} = req.params
+    const {id} = req.params
     try{
         const playlist = await playList.destroy({
             where: {
-                id_playlist
+                id
             }
         });
 
@@ -74,4 +74,7 @@ playListCtrl.eliminarPlaylist = async (req,res) =>{
         })
     }
 }
+
+//Actualizar
+
 export default playListCtrl

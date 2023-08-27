@@ -5,14 +5,15 @@ const canciones = sequelize.define('canciones',{
     id_canciones:{
         type: DataTypes.INTEGER,
         primarykey: true,
-        autoIncrement: true
+        autoincrement: true
     },
     nombre_cancion:{
         type: DataTypes.STRING,
         allowNull: false
     },
     artista:{
-
+        type: DataTypes.INTEGER,
+        allowNull: false
     },
     duracion: {
         type: DataTypes.INTEGER,
@@ -22,8 +23,6 @@ const canciones = sequelize.define('canciones',{
    tablename: 'canciones'
 });
 
-canciones.sync({force: false}).then(()=>{
-    console.log('Tabla de canciones creada')
-})
+
 
 export default canciones

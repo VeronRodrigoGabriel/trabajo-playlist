@@ -1,12 +1,11 @@
 import playListCtrl from '../controllers/playlist.controllers.js'
 import { Router } from "express"
-
 const router = Router()
 
 router.get('/crear-playlist', playListCtrl.renderCrearPlayList)
 router.get('/playList', playListCtrl.renderPlayList)
 
-//CRUD USUARIO
+//CRUD Playlist
 
 //Obtener todos
 router.get('/api/', playListCtrl.obtenerPlaylists)
@@ -21,7 +20,7 @@ router.post('/api/', playListCtrl.crearplaylist)
 router.put('/api/:id')
 
 //elimninar
-router.delete('/api/:id_playlist', playListCtrl.eliminarPlaylist)
+router.delete('/api/:id', playListCtrl.eliminarPlaylist)
 
 export default router
 
