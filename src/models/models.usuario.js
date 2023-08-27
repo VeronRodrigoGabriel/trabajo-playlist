@@ -1,7 +1,7 @@
 import sequelize from "../../db.js";
 import { DataTypes } from "sequelize";
 
-const Usuarios = sequelize.define('Usuarios', {
+const Usuarios = sequelize.define('usuarios', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -28,7 +28,7 @@ const Usuarios = sequelize.define('Usuarios', {
         allownull: false
     }
 }, {
-    tablename: 'Usuarios'
+    tablename: 'usuarios'
 });
 
 Usuarios.sync({ force: false }).then(() => {
