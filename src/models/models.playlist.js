@@ -1,6 +1,7 @@
 import sequelize from "../../db.js";
 import { DataTypes } from "sequelize";
 
+
 const playList = sequelize.define('playlists',{
     id_playlist:{
         type: DataTypes.INTEGER,
@@ -18,6 +19,8 @@ const playList = sequelize.define('playlists',{
 },{
     tablename: 'playlists'
 })
+
+
 
 playList.sync({force: false}).then(()=>{
     console.log('Tabla de playlist creada')

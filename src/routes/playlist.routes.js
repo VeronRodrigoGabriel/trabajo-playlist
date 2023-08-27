@@ -20,6 +20,9 @@ router.post('/api/', playListCtrl.crearplaylist)
 //Actualizar
 router.put('/api/:id')
 
+//elimninar
+router.delete('/api/:id_playlist', playListCtrl.eliminarPlaylist)
+
 export default router
 
 

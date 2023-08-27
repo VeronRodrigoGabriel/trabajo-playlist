@@ -1,5 +1,6 @@
 const playListCtrl = {};
 import playList from '../models/models.playlist.js'
+
 playListCtrl.renderPlayList = (req,res) =>{
     res.render('playlist/playlist')
 }
@@ -52,4 +53,25 @@ playListCtrl.obtenerPlaylists = async (req,res) =>{
     }
 }
 
+
+//eliminar playlist
+playListCtrl.eliminarPlaylist = async (req,res) =>{
+    const {id_playlist} = req.params
+    try{
+        const playlist = await playList.destroy({
+            where: {
+                id_playlist
+            }
+        });
+
+        return res.json({
+            message: 'Playlist eliminada'
+        }) 
+    }catch(error){
+        console.log('Error a eliminar la playlist')
+        return res.status(500).json({
+            message: 'Error a eliminar la playlist'
+        })
+    }
+}
 export default playListCtrl
