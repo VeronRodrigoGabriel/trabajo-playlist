@@ -2,8 +2,7 @@ import playListCtrl from '../controllers/playlist.controllers.js'
 import { Router } from "express"
 const routes = Router()
 
-routes.get('/crear-playlist', playListCtrl.renderCrearPlayList)
-routes.get('/playList', playListCtrl.renderPlayList)
+
 
 //CRUD Playlist
 
@@ -11,7 +10,7 @@ routes.get('/playList', playListCtrl.renderPlayList)
 routes.get('/api/', playListCtrl.obtenerPlaylists)
 
 //Obtener uno
-routes.get('/api/:id')
+routes.get('/api/:id', playListCtrl.obtenerUnaPlaylist)
 
 //crear
 routes.post('/api/', playListCtrl.crearplaylist)

@@ -1,15 +1,13 @@
-const usuarioCtrl  = {};
+const usuarioCtrl = {};
 import usuarios from '../models/models.usuario.js';
 
 
-usuarioCtrl.renderCrearUsuario = (req,res) => {
-    res.render('usuario/CrearUsuario')
-}
+
 
 //controladores
 
 //crear usuario
-usuarioCtrl.crearUsuario = async (req, res) =>{
+usuarioCtrl.crearUsuario = async (req, res) => {
     const {
         nombre_completo,
         email,
@@ -46,7 +44,7 @@ usuarioCtrl.obtenerUsuario = async (req, res) => {
         const Usuario = await usuarios.findByPk(id);
         return res.json(Usuario);
     } catch (error) {
-        console.log('Error al obtener el usuario',error);
+        console.log('Error al obtener el usuario', error);
         return res.status(500).json({
             message: 'Error al obtener el usuario'
         })
