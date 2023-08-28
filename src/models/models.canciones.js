@@ -2,17 +2,17 @@ import sequelize from '../../db.js'
 import { DataTypes } from 'sequelize'
 
 const canciones = sequelize.define('canciones',{
-    id_canciones:{
+    id:{
         type: DataTypes.INTEGER,
-        primarykey: true,
-        autoincrement: true
+        primaryKey: true,
+        autoIncrement: true
     },
     nombre_cancion:{
         type: DataTypes.STRING,
         allowNull: false
     },
     artista:{
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false
     },
     duracion: {

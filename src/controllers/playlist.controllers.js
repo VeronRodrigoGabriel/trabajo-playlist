@@ -32,9 +32,9 @@ playListCtrl.crearplaylist = async (req,res) =>{
         })
 
     } catch (error) {
-        console.log("Error al crear Playlist", error)
+        console.log('Error al crear Playlist',error)
         return res.status(500).json({
-            message: "Error al crear Playlist"
+            message: 'Error al crear Playlist'
         })
     }
 
@@ -47,7 +47,7 @@ playListCtrl.obtenerPlaylists = async (req,res) =>{
 
         return res.json(PlayList)
     }catch(error){
-        console.log('error al obtener playlists')
+        console.log('error al obtener playlists',error)
         return res.status(500).json({
             message:'error al obtener playlists'
         })
@@ -69,7 +69,7 @@ playListCtrl.eliminarPlaylist = async (req,res) =>{
             message: 'Playlist eliminada'
         }) 
     }catch(error){
-        console.log('Error a eliminar la playlist')
+        console.log('Error a eliminar la playlist',error)
         return res.status(500).json({
             message: 'Error a eliminar la playlist'
         })
@@ -87,7 +87,7 @@ playListCtrl.editaPlaylist = async (req,res) =>{
             message: 'Playlist editada con exito'
         })
     }catch(error){
-        console.log('Error al editar playlist')
+        console.log('Error al editar playlist',error)
         return res.status(500).json({
             message: 'Error al editar la playlist'
         })

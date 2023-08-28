@@ -19,9 +19,12 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 //Rutas
-import routes from './src/routes/usuario.routes.js'
+import routesUsuarios from './src/routes/usuario.routes.js'
 import routesPlayList from './src/routes/playlist.routes.js'
-app.use( routes)
+import routesCanciones from './src/routes/canciones.routes.js'
+
+app.use(routesCanciones)
+app.use( routesUsuarios)
 app.use(routesPlayList)
 
 //Base de datos

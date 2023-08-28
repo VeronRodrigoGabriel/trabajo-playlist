@@ -28,15 +28,17 @@ canciones.belongsTo(playList,{
 //Creamos las tablas
 usuarios.sync({ force: false }).then(() => {
     console.log('Tabla de Usuarios creada');
+
+    playList.sync({force: false}).then(()=>{
+        console.log('Tabla de playlist creada')
+        
+        canciones.sync({force: false}).then(()=>{
+            console.log('Tabla de canciones creada')
+        })
+        
+    })
 });
 
-playList.sync({force: false}).then(()=>{
-    console.log('Tabla de playlist creada')
-})
-
-canciones.sync({force: false}).then(()=>{
-    console.log('Tabla de canciones creada')
-})
 
 sequelize.models = {
     usuarios,

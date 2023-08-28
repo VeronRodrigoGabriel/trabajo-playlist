@@ -46,7 +46,7 @@ usuarioCtrl.obtenerUsuario = async (req, res) => {
         const Usuario = await usuarios.findByPk(id);
         return res.json(Usuario);
     } catch (error) {
-        console.log(error);
+        console.log('Error al obtener el usuario',error);
         return res.status(500).json({
             message: 'Error al obtener el usuario'
         })
