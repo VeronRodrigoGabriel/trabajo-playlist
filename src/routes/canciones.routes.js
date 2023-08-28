@@ -6,6 +6,6 @@ const routes = express.Router()
 routes.get('/canciones', cancionesCtrl.obtenerCanciones)
 
 //Agregar canciones
-routes.post('/agregar-cancion', cancionesCtrl.agregarCanciones)
+routes.post('/agregar-cancion/:playlistId', cancionesCtrl.agregarCanciones)
 
 export default routes

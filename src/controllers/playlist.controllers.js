@@ -1,5 +1,5 @@
 const playListCtrl = {};
-import playList from '../models/models.playlist.js'
+import playList from '../models/models.playlist.js';
 import Usuarios from '../models/models.usuario.js';
 
 //controladores
@@ -7,10 +7,10 @@ import Usuarios from '../models/models.usuario.js';
 //crear playlist
 
 playListCtrl.crearplaylist = async (req, res) => {
+    const { usuarioId } = req.params
     const {
         nombre_playlist,
-        genero_musica,
-        usuarioId
+        genero_musica
     } = req.body
 
     try {
@@ -42,8 +42,8 @@ playListCtrl.obtenerPlaylists = async (req, res) => {
             {
                 model: Usuarios,
                 as: 'usuario'
-            }
 
+            }
         })
 
         return res.json(PlayList)

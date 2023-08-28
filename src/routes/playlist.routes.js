@@ -13,7 +13,7 @@ routes.get('/api/', playListCtrl.obtenerPlaylists)
 routes.get('/api/:id', playListCtrl.obtenerUnaPlaylist)
 
 //crear
-routes.post('/api/', playListCtrl.crearplaylist)
+routes.post('/api/:usuarioId', playListCtrl.crearplaylist)
 
 //Actualizar
 routes.put('/api/:id', playListCtrl.editaPlaylist)

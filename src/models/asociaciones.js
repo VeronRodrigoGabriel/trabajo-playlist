@@ -7,35 +7,39 @@ import canciones from './models.canciones.js'
 usuarios.hasMany(playList, {
     foreignKey: "usuarioId",
     sourceKey: "id",
-  })
-  
-  playList.belongsTo(usuarios, {
+})
+
+playList.belongsTo(usuarios, {
     foreignKey: "usuarioId",
     targetKey: "id",
-  })
+})
 
 //Relacion de uno a muchos entre las playlist y las canciones 
-playList.hasMany(canciones,{
+playList.hasMany(canciones, {
     foreignKey: 'playlistId',
     sourceKey: 'id'
 })
 
-canciones.belongsTo(playList,{
+canciones.belongsTo(playList, {
     foreignKey: 'playlistId',
-    targetKey:'id'
+    targetKey: 'id'
 })
+
+
+
+
 
 //Creamos las tablas
 usuarios.sync({ force: false }).then(() => {
     console.log('Tabla de Usuarios creada');
 
-    playList.sync({force: false}).then(()=>{
+    playList.sync({ force: false }).then(() => {
         console.log('Tabla de playlist creada')
-        
-        canciones.sync({force: false}).then(()=>{
+
+        canciones.sync({ force: false }).then(() => {
             console.log('Tabla de canciones creada')
         })
-        
+
     })
 });
 
