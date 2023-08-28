@@ -1,6 +1,6 @@
 const playListCtrl = {};
 import playList from '../models/models.playlist.js'
-import usuarios from '../models/models.usuario.js';
+
 
 playListCtrl.renderPlayList = (req,res) =>{
     res.render('playlist/playlist')
